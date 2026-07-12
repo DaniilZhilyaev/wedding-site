@@ -109,34 +109,6 @@ indicator.addEventListener("click",()=>{
 // Маршрут
 // ================================
 
-const routeButton = document.querySelector(".card .button");
-
-routeButton.addEventListener("click",(e)=>{
-
-    e.preventDefault();
-
-    const ua = navigator.userAgent.toLowerCase();
-
-    if(/iphone|ipad|mac/.test(ua)){
-
-        window.open("https://maps.apple.com/?q=Tsar+Palace+Luxury+Hotel+SPA");
-
-        return;
-
-    }
-
-    if(/android/.test(ua)){
-
-        window.open("https://www.google.com/maps/search/?api=1&query=Tsar+Palace+Luxury+Hotel+SPA");
-
-        return;
-
-    }
-
-    window.open("https://yandex.ru/maps/?text=Tsar+Palace+Luxury+Hotel+SPA");
-
-});
-
 
 document.querySelectorAll(".section-arrow").forEach(arrow => {
 

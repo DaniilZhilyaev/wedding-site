@@ -88,21 +88,16 @@ main{
 ========================================================== */
 
 .hero{
-
     position:relative;
-
     min-height:100svh;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
-    overflow:hidden;
+    overflow:visible;
 
     padding:30px 28px;
-
 }
 
 .hero::before{
@@ -126,6 +121,7 @@ main{
     z-index:0;
 
 }
+
 
 .hero-content{
 
@@ -158,45 +154,44 @@ main{
 }
 
 .flower-top{
-
-    width:820px;
-
-    left:-75px;
-
-    top:-55px;
-
+    width:620px;
+    left:-40px;
+    top:-30px;
 }
 
 .flower-top-right{
-
-    width:470px;
-
-    right:-40px;
-
-    top:-25px;
-
+    width:400px;
+    right:-25px;
+    top:-15px;
 }
 
 .flower-bottom{
+    position:absolute;
 
-    width:620px;
+    width:470px;
 
-    right:-80px;
+    right:-35px;
 
-    bottom:-50px;
+    top:100%;
 
+    transform:translateY(-40%);
+
+    z-index:3;
 }
 
 .flower-bottom-left{
+    position:absolute;
 
-    width:320px;
+    width:340px;
 
     left:-25px;
 
-    bottom:-20px;
+    top:100%;
 
+    transform:translateY(-45%);
+
+    z-index:3;
 }
-
 /* ==========================================================
    HERO TEXT
 ========================================================== */
@@ -221,15 +216,17 @@ main{
 
 h1{
 
-    font-family:"Cormorant Garamond",serif;
+    font-family:"Playfair Display", serif;
 
-    font-size:66px;
+    font-size:68px;
 
     font-style:italic;
 
-    font-weight:300;
+    font-weight:400;
 
-    line-height:1.05;
+    line-height:0.95;
+
+    letter-spacing:-0.03em;
 
     color:#66504b;
 
@@ -241,9 +238,9 @@ h1 span{
 
     display:block;
 
-    margin:18px 0;
+    margin:8px 0;
 
-    font-size:56px;
+    font-size:48px;
 
     font-style:italic;
 
@@ -283,17 +280,27 @@ h1 span{
 
     display:block;
 
-    font-size:34px;
+    font-size:62px;
 
     line-height:1;
 
-    color:#b38b84;
+    color:#a77a73;
 
-    font-family:"Cormorant Garamond",serif;
+    font-weight:300;
 
     animation:arrowFloat 2.2s ease-in-out infinite;
 
     user-select:none;
+
+    transition:.3s;
+
+}
+
+.scroll-indicator:hover span{
+
+    color:#8f6760;
+
+    transform:translateY(4px);
 
 }
 
@@ -348,11 +355,9 @@ h1 span{
 }
 
 .section.intro{
-
-    justify-content:flex-start;
-
-    padding-top:140px;
-
+    margin-top:0;
+    padding-top:60px;
+    position:relative;
 }
 
 .section:nth-child(even){
@@ -363,13 +368,31 @@ h1 span{
 
 .botanical{
 
-    width:68px;
+    width:95px;
+    height:auto;
 
-    margin:0 auto 24px;
+    margin:40px auto 28px;
 
-    opacity:.92;
+    opacity:.95;
+
+    object-fit:contain;
+
+    animation:branchFloat 5.5s ease-in-out infinite;
 
 }
+
+.branch-small{
+    width:95px;
+}
+
+.branch-medium{
+    width:120px;
+}
+
+.branch-large{
+    width:145px;
+}
+
 .section h2{
 
     font-family:"Cormorant Garamond",serif;
@@ -478,17 +501,40 @@ h1 span{
 
 .section-arrow{
 
-    margin-top:48px;
+    margin-top:42px;
 
-    padding-top:28px;
+    display:flex;
 
-    font-size:24px;
+    justify-content:center;
 
-    color:#9b726d;
+    align-items:center;
+
+    font-size:62px;
+
+    line-height:1;
+
+    color:#a77a73;
+
+    font-weight:300;
 
     cursor:pointer;
 
+    user-select:none;
+
+    transition:.3s;
+
+    animation:arrowFloat 2.2s ease-in-out infinite;
+
 }
+
+.section-arrow:hover{
+
+    color:#8f6760;
+
+    transform:translateY(4px);
+
+}
+
 
 .section{
 
@@ -685,11 +731,17 @@ h1 span{
 
     align-items:center;
 
-    font-size:34px;
+    font-size:62px;
 
-    color:#a97d75;
+    line-height:1;
+
+    color:#a77a73;
+
+    font-weight:300;
 
     cursor:pointer;
+
+    user-select:none;
 
     transition:.3s;
 
@@ -699,8 +751,54 @@ h1 span{
 
 .back-to-top:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-6px);
 
-    color:#8e6760;
+    color:#8f6760;
 
+}
+
+@keyframes branchFloat{
+
+    0%,100%{
+
+        transform:
+            translateY(0px)
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-12px)
+            scale(1.05)
+            rotate(3deg);
+
+    }
+
+}
+
+.countdown-section h2{
+
+    font-size:46px;
+
+    margin-bottom:32px;
+
+}
+
+.venue-branch{
+    margin-top:0px;
+}
+
+.flowers-branch{
+    margin-top:10px;
+}
+
+.timing-branch{
+    margin-top:0px;
+}
+
+.countdown-branch{
+    margin-top:-10px;
 }
